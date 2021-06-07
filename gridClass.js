@@ -16,10 +16,6 @@ class Grid{
 			'y' se refere aos números de vizinhos necessarios para uma célúla continuar viva
 			Qualquer outro caso a célula morre
 		*/
-		this.rules = { 
-		  "Live?" : [false, false, true, true, false, false, false, false, false],
-		  "Born?" : [false, false, false, true, false, false, false, false, false]
-		}
 
 		this.bornRules = [false, false, false, true, false, false, false, false, false]
 		this.surviveRules = [false, false, true, true, false, false, false, false, false]
@@ -146,16 +142,11 @@ class Grid{
 
 
 		if (this.grid[i][g].alive){
-			this.grid[i][g].alive = false
-			this.grid[i][g].nextGen = false
+			this.setCellState(i, g, false)
 		}
 		else{
-			this.grid[i][g].alive = true
-			this.grid[i][g].nextGen = true
+			this.setCellState(i, g, true)
 		}
-
-		this.drawGrid()
-
 
 		return false
 	}
@@ -200,5 +191,20 @@ class Grid{
 	*/
 	updateSurviveRules(newRules){
 		this.surviveRules = newRules;
+	}
+
+	/*
+		Define o estado de uma célula
+		
+		Argumentos: 
+			'i','g' : int, posição do grid que determinada 
+			'state' : bool, valor que define o estado da célula
+		Retorno: void
+	*/
+	setCellState(i, g, state){
+		this.grid[i][g].alive = state;
+		this.grid[i][g].nextGen = state;
+		
+		this.drawGrid()
 	}
 }

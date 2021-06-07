@@ -7,7 +7,9 @@
 	font-family: "Roboto", sans-serif;
 	user-select: none;
 
-	 text-align: center;
+	text-align: center;
+
+	box-sizing: border-box;
 }
 
 
@@ -29,6 +31,8 @@ button{
 	border: none;
 
 	color: inherit;
+
+	cursor: pointer;
 }
 
 
@@ -88,16 +92,12 @@ div#generation-menu div#generation-fixed button#generation-drawer-toggle{
 	color: white;
 	font-size: 3vh;
 	padding: 0 0.6vw 0 0.6vw;
-
-  	cursor: pointer;
 }
 
 
 div#generation-menu div#generation-drawer button{
 	width: 10%;
 	height: 100%;
-
-  	cursor: pointer;
 }
 
 
@@ -244,7 +244,6 @@ div#rules-menu #rules-fixed button{
 	transition: transform 0.3s ease-out 0s;
 
 	width: 10%;
-	cursor: pointer;
 }
 
 
@@ -252,3 +251,132 @@ div#rules-menu #rules-fixed button:hover svg{
 	filter: brightness(0.85);
 }
 
+/* Patterns-menu */
+
+
+div#patterns-menu{
+	width: 50vw;
+	height: 90vh;
+
+	top: 50%;
+	left: 50%;
+
+	transform: translate(-50%,-50%);
+
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	display: flex;
+}
+
+div#stick-bar{
+	position: sticky;
+	top: 0;
+	left: 0;
+
+	width: 50vw;
+	height: 5vh;
+
+	background-color: rgba(19,19,19,1);
+}
+
+div.pattern{
+	width: 100%;
+	height: auto;
+
+	background-color: rgba(255,255,255,0.1);
+
+	padding: 2%;
+	margin: 1.5% 0 1.5% 0;
+
+	display: flex;
+	flex-direction: row;
+
+}
+
+div.pattern div{
+	display: flex;
+	flex-direction: column;
+
+	justify-content: center;
+	align-items: center;
+
+	width: 25vw;
+}
+
+
+div.pattern .pattern-left img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+div.pattern .pattern-right *{
+	margin-bottom: 7%; 
+	margin-top: 7%; 
+}
+
+div.pattern .pattern-right button{
+	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.4);
+	padding: 10px;
+
+	font-size: 3vh;
+}
+
+div.pattern:nth-child(1n) .pattern-right button{
+	background-color: rgb(222,53,46);
+}
+
+div.pattern:nth-child(2n) .pattern-right button{
+	background-color: rgb(45,197,94);
+}
+
+div.pattern:nth-child(3n) .pattern-right button{
+	background-color: rgb(243, 189, 9);
+}
+
+div.pattern:nth-child(4n) .pattern-right button{
+	background-color: rgb(42, 132, 210);
+}
+
+div.pattern .pattern-right{	
+	padding: 2%;
+}
+
+
+div#help-pattern{
+	left: 2%;
+	top: 3%;
+
+	width: 10vw;
+
+	display: flex;
+	flex-direction: row;
+}
+
+div#help-pattern button{
+	margin: 10%;
+	width: 50%;
+}
+
+div#help-pattern button svg{
+	fill: #F1F1F1;
+}
+
+.focused{
+	z-index: 300 !important;
+}
+
+span#cover{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	z-index: -100;
+}
+
+span#cover.active{
+	background-color: rgba(0,0,0,0.7);
+	z-index: 200;
+}

@@ -1,6 +1,7 @@
 // Canvas
 const CANVAS = document.getElementById("myCanvas")
 const CONTEXT = CANVAS.getContext("2d");
+const COVER = document.getElementById("cover")
 
 
 // Menu de controle de gerações
@@ -15,10 +16,16 @@ const GEN_HIDE_BTN = document.getElementById("generation-drawer-toggle");
 
 
 // Menu de controle de regras
-const RULES_MENU = document.getElementById("rules-menu")
-const RULES_DRAG_BAR = document.getElementById("rules-fixed")
-const RULES_DRAWER = document.getElementById("rules-drawer")
-const BORN_CHECKBOX = document.getElementsByName("born")
-const ALIVE_CHECKBOX = document.getElementsByName("alive")
+const RULES_MENU = document.getElementById("rules-menu");
+const RULES_DRAG_BAR = document.getElementById("rules-fixed");
+const RULES_DRAWER = document.getElementById("rules-drawer");
+const BORN_CHECKBOX = document.getElementsByName("born");
+const ALIVE_CHECKBOX = document.getElementsByName("alive");
 
 const RULES_HIDE_BTN = document.getElementById("rules-drawer-toggle");
+
+
+// 
+const PATTERN_MENU = document.getElementById("patterns-menu")
+const PATTERNS_AREA_DIV = document.getElementById("patterns-area");
+const SHOW_PATTERNS_MENU = document.getElementById("show-patterns-menu")
