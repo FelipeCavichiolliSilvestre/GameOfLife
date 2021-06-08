@@ -13,7 +13,7 @@ Importante ressaltar que o usuario só é responsável de estabelecer as condiç
 Autômatos celulares possuem regras pré-definidas e a cada "geração" todas as células são submetidas a essas regras, simultaneamente.
 As regras irão definir quando um célula viva se torna morta, quando uma célula morta se torna viva, e quando a célula permanece estável. 
 <br><br>
-Esse processo de decisão é baseado nos vizinhos de uma célula, ou seja, as 8 células que a circundam. A sintaxe utilizada para descrever essas regras é "abc/xyz", onde 'abc' e 'xyz' são um conjunto de números entre 0 e 8. 
+Esse processo de decisão é baseado nos vizinhos de uma célula, ou seja, as 8 células que a circundam. A sintaxe utilizada para descrever essas regras é "abc/xyz", onde 'abc' e 'xyz' são um conjunto de números entre 0 e 8. O conjunto vazio '{}' é válido, ou seja, é possível ter regras como '/136'.
 <br>
 'abc' define quantos vizinhos vivos uma célula viva precisa para continuar viva na próxima geração.
 <br>
@@ -67,8 +67,6 @@ Agora para explicar como é estruturado usaremos o exemplo da Regra 110, explica
 <br>
 Se você reparar a linha "Padrão" é uma contagem binária decrescente. e a linha "Novo estado" forma um número binário de 8 digitos, que, se convertermos para decimal, será o número 110.
 <br>
-Podemos calcular quantas regras existem simplesmente calculado 2<sup>8</sup>, que é igual a 256.
+Podemos saber quantas regras existem simplesmente calculado 2<sup>8</sup>, que é igual a 256.
 <br>
-Podemos também calcular quantas regras possíveis existem para um autómato 2D. Basta resolver o somátorio:
-
-<img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\bg_white&space;\sum_{p=0}^{9}\frac{9!}{p!(9&space;-&space;p)!}&space;=&space;512" title="\sum_{p=0}^{9}\frac{9!}{p!(9 - p)!} = 512" />
+Podemos também calcular quantas regras possíveis existem para um autómato 2D ao trabalharmos com combinações e somatórios. A resposta é 262.144 diferentes regras, não mostrarei a resolução pois creio que isso fuja do escopo do projeto.
