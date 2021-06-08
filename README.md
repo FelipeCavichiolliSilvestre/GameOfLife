@@ -2,7 +2,7 @@
 
 A inspiração para esse projeto foi a morte (decorrente de COVID-19) do criador do mais famoso autómato celular, John Conway, responsável por criar o Jogo da Vida. 
 <br><br>
-Já existem páginas Web que implementam o Jogo da Vida, como [este](https://playgameoflife.com), porém não fui capaz de encontrar nenhum em português, e muito menos um que te permitisse manipular as regras do jogo, então decidi fazer um por mim mesmo.  [turing](https://pt.wikipedia.org/wiki/Turing_completude)
+Já existem páginas Web que implementam o Jogo da Vida, como [este](https://playgameoflife.com), porém não fui capaz de encontrar nenhum em português, e muito menos um que te permitisse manipular as regras do jogo, então decidi fazer um por mim mesmo.
 
 ## O que é um autômato celular?
 
