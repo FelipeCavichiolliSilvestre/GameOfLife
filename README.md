@@ -45,4 +45,7 @@ Essas regras fazem com que não seja possível dizer facilmente se determinado p
 ## Maior interação com o usuário
 Existem diversas outras regras de jogos que possuem características interessantes, por exemplo a regra 1357/1357, que faz com que qualquer padrão se multiplique a cada 2 gerações. Ou a regra 012345678/1, que cria uma fractal parecida com a do [Palito de Dente](https://en.wikipedia.org/wiki/Toothpick_sequence).
 <br>
-Modificar com essas regras e descobrir novos padrões é inegavelmente divertido, e esse é o maior diferencial do meu projeto, você consegue facilmente modifica-las, inclusive durante a simulação.
+Modificar com essas regras e descobrir novos padrões é inegavelmente divertido, e esse é o maior diferencial do meu projeto, você consegue facilmente modificá-las, inclusive durante a simulação.
+
+
+### Autómatos Celulares em uma dimensão
