@@ -69,5 +69,6 @@ Se você reparar a linha "Padrão" é uma contagem binária decrescente. e a lin
 <br>
 Podemos calcular quantas regras existem simplesmente calculado 2<sup>8</sup>, que é igual a 256.
 <br>
-Podemos também calcular quantas regras possíveis existem para um autómato 2D.
+Podemos também calcular quantas regras possíveis existem para um autómato 2D. Basta resolver o somátorio:
 
+<img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;\bg_white&space;\sum_{p=0}^{9}\frac{9!}{p!(9&space;-&space;p)!}&space;=&space;512" title="\sum_{p=0}^{9}\frac{9!}{p!(9 - p)!} = 512" />
