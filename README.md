@@ -48,4 +48,26 @@ Existem diversas outras regras de jogos que possuem características interessant
 Modificar com essas regras e descobrir novos padrões é inegavelmente divertido, e esse é o maior diferencial do meu projeto, você consegue facilmente modificá-las, inclusive durante a simulação.
 
 
-### Autómatos Celulares em uma dimensão
+## Autómatos Celulares em uma dimensão
+Um outro tipo de autómato celular que acho importante comentar são os que utilizam apenas uma dimensão. E que a 2° dimensão é simplesmente o tempo.
+<br><br>
+As regras são parecidas, porém estruturadas de forma diferente. Ao contrário dos autómatos bidimensionais, cada célula só possui dois vizinhos, e por isso a forma que será definido seu estado na próxima geração não é mais determinado pela quantidade de vizinhos vivos, e sim pela configuração dos vizinhos. 
+<br>
+Consolidando, nos autómatos 2D não importava se a célula vizinha viva estava à esquerda ou à direita. O resultado independia de ordem, o que não occore nos automátos 1D.
+<br><br>
+Agora para explicar como é estruturado usaremos o exemplo da Regra 110, explicando também o porquê da regra ser chamada de 110. Para isso faremos uma tabela simples, com todas as combinações possíveis de 3 células e abaixo o seu respectivo novo valor. 
+<br>
+0 significa morto, 1 significa vivo.
+
+|                               |     |     |     |     |     |     |     |     |
+| ----------------------------- |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Padrão                        | 111 | 110 | 101 | 100 | 011 | 010 | 001 | 000 |
+| Novo estado da célula central |  0  |  1  |  1  |  0  |  0  |  0  |  0  |  0  |
+
+<br>
+Se você reparar a linha "Padrão" é uma contagem binária decrescente. e a linha "Novo estado" forma um número binário de 8 digitos, que, se convertermos para decimal, será o número 110.
+<br>
+Podemos calcular quantas regras existem simplesmente calculado 2<sup>8</sup>, que é igual a 256.
+<br>
+Podemos também calcular quantas regras possíveis existem para um autómato 2D.
+
