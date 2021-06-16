@@ -1,0 +1,56 @@
+<h3>O que é um autômato celular? </h3>
+
+<p>Autômato celular é uma especie de simulação, que é realizada em um grade infinita, onde cada espaço dessa grade é uma célula em um estado binário. Ou seja, ela está viva ou morta, infectada ou saudável, colorida ou não.</p>
+<p>Autômatos celulares possuem regras pré-definidas e a cada "geração" todas as células são submetidas a essas regras, simultaneamente.
+As regras irão definir quando um célula viva se torna morta, quando uma célula morta se torna viva, e quando a célula permanece estável.</p>
+<p>Esse processo de decisão é baseado nos vizinhos de uma célula, ou seja, as 8 células que a circundam. A sintaxe utilizada para descrever essas regras é "abc/xyz", onde 'abc' e 'xyz' são um conjunto de números entre 0 e 8.</p>
+<ul>
+<li>'abc' define quantos vizinhos vivos uma célula viva precisa para continuar viva na próxima geração.</li>
+<li>'xyz' define quantos vizinhos vivos uma célula morta precisa para se tornar viva na próxima geração.</li>
+
+<p>Exemplo: Um autômato celular com uma regra 36/123. </p>
+<p>Isso significa que uma célula morta se tornará viva se ela tiver 1, 2 ou 3 vizinhos vivos.</p>
+<p>Também significa que uma célula viva sobreviverá se tiver 3 ou 6 vizinhos vivos.</p>
+<p>Podemos inferir então que uma célula viva morrerá se tiver 1,2,4,5,7 ou 8 vizinhos vivos.</p>
+
+
+<h3> Conway's Game of Life </h3>
+<p>Conway's Game of Life possui regras 23/3, e a lógica por trás dessa escolha é: </p>
+<ul>
+	<li>Células vivas com menos de 2 vizinhos vivos morrem de solidão</li>
+	<li>Células vivas com mais de 3 vizinhos vivos morrem por superpopulação</li>
+	<li>Células mortas se tornam vivas quando possuem exatamente 3 vizinhos vivos, como por reprodução </li>
+</ul>
+
+
+
+
+
+
+
+
+<p>Esse site é uma simulação do Jogo da Vida criado pelo matemático John Conway. O Jogo da Vida é um autômato celular, isso significa que, uma vez estabelecida as condições iniciais, o jogo se desenvolve sozinho a cada "geração".</p>
+<p>É jogado em uma grade infinita de células, onde cada célula possui apenas 2 estados possíveis: Vivo ou morto.</p>
+<p>Cada célula possui 8 vizinhos.</p>
+<p>A cada "geração" é aplicado uma série de regras em cada uma das células, determinando assim qual será o estado da célula na próxima geração.</p>
+<p>A regras do jogo da vida são:</p>
+
+<ul>
+<li>Qualquer célula viva com menos de 2 vizinhos morre de isolação</li>
+<li>Qualquer célula viva com mais de 3 vizinhos morre de superpopulação</li>
+<li>Qualquer célula morta com exatamente 3 vizinhos, se torna viva, como por reprodução</li>
+</ul>
+
+<p>As regras podem ser simplificadas pela notação "23/3", que significa, "As células sobrevivem se possuem 2 ou 3 vizinhos e nascem se possuem 3 vizinhos".</p>
+
+
+
+<p>Clique com o botão esquerdo em qualquer lugar do grid para alterar o estado da célula entre viva e morta </p>
+
+<p> O painel no canto inferior esquerdo possui 5 botões e 1 barra: </p>
+
+<p> Avança uma geração </p>
+<p> Começa a simulação, a cada meio segundo avança uma geração </p>
+<p> Pausa a simulação </p>
+<p> Reinicia a simulação, limpando o grade </p>
+<p> Controla a velocidade da simulação </p>
