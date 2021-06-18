@@ -65,8 +65,10 @@ Agora para explicar como é estruturado usaremos o exemplo da Regra 110, explica
 | Novo estado da célula central |  0  |  1  |  1  |  0  |  0  |  0  |  0  |  0  |
 
 <br>
-Se você reparar a linha "Padrão" é uma contagem binária decrescente. e a linha "Novo estado" forma um número binário de 8 digitos, que, se convertermos para decimal, será o número 110.
-<br>
-Podemos saber quantas regras existem simplesmente calculado 2<sup>8</sup>, que é igual a 256.
-<br>
-Podemos também calcular quantas regras possíveis existem para um autómato 2D ao trabalharmos com combinações e somatórios. A resposta é 262.144 diferentes regras, não mostrarei a resolução pois creio que isso fuja do escopo do projeto.
+
+Se você reparar a linha "Padrão" é uma contagem binária decrescente. e a linha "Novo estado" forma um número binário de 8 digitos, que, se convertermos para decimal, será o número 110.<br>
+
+Podemos saber quantas regras existem simplesmente calculado 2<sup>8</sup>, que é igual a 256.<br>
+
+Podemos também calcular quantas regras possíveis existem para um autómato 2D. Para a Regra de Nascimento existem 9 opções (0 a 8) e 2 estados possivéis, checado ou não cechado. Ou seja, 2<sup>9</sup> combinações. <br>
+A Regra de Sobrevivência é exatamente igual, então basta multiplica-lás: 2<sup>9</sup> * 2<sup>9</sup> = 2<sup>18</sup> = 262144 regras diferentes.
