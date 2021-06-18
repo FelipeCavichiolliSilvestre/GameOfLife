@@ -60,8 +60,8 @@ As regras são parecidas, porém estruturadas de forma diferente. Ao contrário 
 Consolidando, nos autómatos 2D não importava se a célula vizinha viva estava à esquerda ou à direita. O resultado independia de ordem, o que não occore nos automátos 1D.<br><br>
 
 
-Agora para explicar como é estruturado usaremos o exemplo da Regra 110, explicando também o porquê da regra ser chamada de 110. Para isso faremos uma tabela simples, com todas as combinações possíveis de 3 células e abaixo o seu respectivo novo valor. <br>
-
+Agora para explicar como é estruturado usaremos o exemplo da Regra 110, explicando também o porquê da regra ser chamada de 110. Para isso faremos uma tabela simples, com todas as combinações possíveis de 3 células e abaixo o seu respectivo novo valor. 
+<br>
 0 significa morto, 1 significa vivo.
 
 |                               |     |     |     |     |     |     |     |     |
