@@ -3,11 +3,9 @@ class Board{
 		this.grid = undefined
 		this.cell_width = 15
 
-		this.win_width = window.innerWidth;
-		this.win_height = window.innerHeight;
+		this.win_width = 0;
+		this.win_height = 0;
 		
-		CANVAS.width = this.win_width;
-		CANVAS.height = this.win_height;
 
 		/*
 			Regras para a simulação, automações possuem uma notação x/y
@@ -21,6 +19,7 @@ class Board{
 		this.surviveRules = [0, 0, 1, 1, 0, 0, 0, 0, 0]
 
 		// Setup Inicial
+		this.userResizedWindow()
 		this.createGrid()
 
 		// event.listeners
