@@ -77,7 +77,7 @@ class GenerationControl{
 		Retorno: void
 	*/
 	userChangedSimulationSpeed(){
-		this.simulationSpeed = SPEED_SLIDE.value * 1000;
+		this.simulationSpeed = SPEED_SLIDE.value;
 		this.userClickedPlay();
 	}
 
