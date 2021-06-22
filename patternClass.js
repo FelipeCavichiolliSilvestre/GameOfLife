@@ -26,9 +26,7 @@ class Pattern{
 		this.patternDraw = patternDraw;
 		this.descriptionText = description;
 		this.titleText = title
-
-		/* Botão que plota o padrão no grid */
-		this.btn = undefined;
+		
 
 		/* Elemento HTML a ser inserido no documento*/
 		this.div = undefined;
@@ -151,7 +149,6 @@ class Pattern{
 	createButton(){
 		let btn = document.createElement("button");
 		btn.innerHTML = "Testar padrão";
-		this.btn = btn
 
 		return btn;
 	}
