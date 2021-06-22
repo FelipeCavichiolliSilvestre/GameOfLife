@@ -16,8 +16,8 @@ class RulesControl{
 			BORN_CHECKBOX[i].addEventListener("input", this.userChangedBornRules.bind(this))
 		}
 
-		for (var i = 0; i < ALIVE_CHECKBOX.length; i++) {
-			ALIVE_CHECKBOX[i].addEventListener("input", this.userChangedSurviveRules.bind(this))
+		for (var i = 0; i < SURVIVE_CHECKBOX.length; i++) {
+			SURVIVE_CHECKBOX[i].addEventListener("input", this.userChangedSurviveRules.bind(this))
 		}
 
 		RULES_HIDE_BTN.addEventListener("click", this.userClickedHide.bind(this))
@@ -52,8 +52,8 @@ class RulesControl{
 	userChangedSurviveRules(){
 		let newSurviveRule = []
 
-		for (var i = 0; i < ALIVE_CHECKBOX.length; i++) {
-			newSurviveRule.push(ALIVE_CHECKBOX[i].checked)
+		for (var i = 0; i < SURVIVE_CHECKBOX.length; i++) {
+			newSurviveRule.push(SURVIVE_CHECKBOX[i].checked)
 		}
 
 

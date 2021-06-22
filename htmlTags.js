@@ -20,7 +20,7 @@ const RULES_MENU = document.getElementById("rules-menu");
 const RULES_DRAG_BAR = document.getElementById("rules-fixed");
 const RULES_DRAWER = document.getElementById("rules-drawer");
 const BORN_CHECKBOX = document.getElementsByName("born");
-const ALIVE_CHECKBOX = document.getElementsByName("alive");
+const SURVIVE_CHECKBOX = document.getElementsByName("alive");
 
 const RULES_HIDE_BTN = document.getElementById("rules-drawer-toggle");
 
