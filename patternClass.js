@@ -68,8 +68,7 @@ class Pattern{
 		let img = this.createImage();
 
 		leftDiv.appendChild(img);
-		console.log(typeof(leftDiv))
-
+		
 		return leftDiv;
 	}
 
