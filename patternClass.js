@@ -21,17 +21,15 @@ class Pattern{
 			'title' : string, o nome do padrão
 			'description' : string, descrição de como o padrão age
 	*/
-	constructor(patternDraw, title, description){
+	constructor(pattern, title, description){
 
-		this.patternDraw = patternDraw;
+		this.patternDraw = pattern;
 		this.descriptionText = description;
 		this.titleText = title
 
-		/* Botão que plota o padrão no grid */
-		this.btn = undefined;
 
 		/* Elemento HTML a ser inserido no documento*/
-		this.div = undefined;
+		this.patternDiv;
 
 		this.createDiv();
 		this.insertDiv();
@@ -45,14 +43,14 @@ class Pattern{
 		Retorno: void
 	*/
 	createDiv(){
-		this.div = document.createElement("div");
-		this.div.classList.add("pattern");
+		this.patternDiv = document.createElement("div");
+		this.patternDiv.classList.add("pattern");
 
 		var left = this.createLeft();
 		var right = this.createRight();
 
-		this.div.appendChild(left);
-		this.div.appendChild(right);
+		this.patternDiv.appendChild(left);
+		this.patternDiv.appendChild(right);
 	}
 
 	/*	
@@ -150,7 +148,6 @@ class Pattern{
 	createButton(){
 		let btn = document.createElement("button");
 		btn.innerHTML = "Testar padrão";
-		this.btn = btn
 
 		return btn;
 	}
@@ -182,12 +179,12 @@ class Pattern{
 	}	
 
 	/*	
-		Insere 'this.div' no menu de padrões 
+		Insere 'this.patternDiv' no menu de padrões 
 
 		Argumentos: void
 		Retorno: void
 	*/
 	insertDiv(){
-		PATTERNS_AREA_DIV.appendChild(this.div)
+		PATTERNS_AREA_DIV.appendChild(this.patternDiv)
 	}
 }
