@@ -1,15 +1,13 @@
 class PatternControl {
   /*
 		Argumentos:
-			'boardObject' : Board, será o objeto Board que terá as gerações controladas
+			'boardObject' : Board, será o objeto Board que sofrerá a plotagem dos padrões
 	*/
   constructor(boardObject) {
-    console.log("Pattern Control");
-
     // A classe Board, é passada pelo construtor para que só exista um objteto Board
     this.boardObj = boardObject;
 
-    this.allPatterns = [];
+    this.patternList = [];
 
     SHOW_PATTERNS_MENU.addEventListener("click", this.userClickedShow);
     COVER.addEventListener("click", this.userClickedHide);
@@ -57,6 +55,27 @@ class PatternControl {
   }
 
   /*	
+		Insere um padrão na lista de padões
+
+		Argumentos:
+			'patternGrid' : bool [][], o padrão de células vivas
+			'title' : string, o nome do padrão
+			'desc' : string, descrição de como o padrão age
+		Retorno: void
+	*/
+  insertPattern(patternDraw, title, desc) {
+    let newPattern = new Pattern(patternDraw, title, desc);
+    let newPatternBtn = newPattern.btn;
+
+    newPatternBtn.addEventListener(
+      "click",
+      this.deployPattern.bind(this, newPattern.patternDraw)
+    );
+
+    this.patternList.push(newPattern);
+  }
+
+  /*	
 		Esconde o menu de padrões
 
 		Argumentos: void
@@ -76,26 +95,5 @@ class PatternControl {
   userClickedShow() {
     PATTERN_MENU.style.display = "flex";
     COVER.classList.toggle("active", true);
-  }
-
-  /*	
-		Insere um padrão na lista de padões
-
-		Argumentos:
-			'patternGrid' : bool [][], o padrão de células vivas
-			'title' : string, o nome do padrão
-			'desc' : string, descrição de como o padrão age
-		Retorno: void
-	*/
-  insertPattern(patternDraw, title, desc) {
-    let newPattern = new Pattern(patternDraw, title, desc);
-    let newPatternBtn = newPattern.btn;
-
-    newPatternBtn.addEventListener(
-      "click",
-      this.deployPattern.bind(this, newPattern.patternDraw)
-    );
-
-    this.allPatterns.push(newPattern);
   }
 }
