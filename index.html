@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Game of Life</title>
 
-		<link rel="stylesheet" type="text/css" href="gameOfLife.css">
-		<meta charset="utf-8">
-	</head>
+<head>
+	<title>Game of Life</title>
 
-	<body>
-		<canvas id="myCanvas"></canvas>
-		<span id="cover" class=""></span>
+	<link rel="stylesheet" type="text/css" href="gameOfLife.css">
+	<meta charset="utf-8">
+</head>
 
-		<!--
+<body>
+	<canvas id="myCanvas"></canvas>
+	<span id="cover" class=""></span>
+
+	<!--
 		<div id="tutorial" class="menu">
 			<h2>O que é um autômato celular? </h2>
 
@@ -43,135 +44,184 @@
 			<button class="next-tutorial">Próximo</button>
 		</div>-->
 
-		<div id="generation-menu" class="menu">
+	<div id="generation-menu" class="menu">
 
-			<div id="generation-drawer">
-				<button id="step-button">
-					<svg width="72" height="85" viewBox="0 0 72 85" fill="#F3BD09" xmlns="http://www.w3.org/2000/svg"><path d="M0 85V0L72 42.5L0 85Z" /><path d="M52 0H72V85H52V0Z"/></svg>
-				</button>
+		<div id="generation-drawer">
+			<button id="step-button">
+				<svg width="72" height="85" viewBox="0 0 72 85" fill="#F3BD09" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0 85V0L72 42.5L0 85Z" />
+					<path d="M52 0H72V85H52V0Z" />
+				</svg>
+			</button>
 
-				<button id="play-button">
-					<svg id="play-svg" width="72" height="85" viewBox="0 0 72 85" fill="#2DC55E" xmlns="http://www.w3.org/2000/svg"><path d="M0 85L0 0L72 42.5L0 85Z" /></svg>
-				</button>
+			<button id="play-button">
+				<svg id="play-svg" width="72" height="85" viewBox="0 0 72 85" fill="#2DC55E" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0 85L0 0L72 42.5L0 85Z" />
+				</svg>
+			</button>
 
-				<button id="pause-button">
-					<svg width="66" height="85" viewBox="0 0 66 85" fill="#DE2E2E" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H20V85H0V0Z" /><path d="M46 0H66V85H46V0Z"/></svg>
-				</button>
+			<button id="pause-button">
+				<svg width="66" height="85" viewBox="0 0 66 85" fill="#DE2E2E" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0 0H20V85H0V0Z" />
+					<path d="M46 0H66V85H46V0Z" />
+				</svg>
+			</button>
 
-				<button id="reset-button">
-					<svg style="transform: scale(1.3);" width="84" height="84" viewBox="0 0 84 84"  fill="#2A84D2" stroke="#2A84D2" xmlns="http://www.w3.org/2000/svg"><path d="M80.7641 32.0421L80.7503 32.0444C80.5653 30.813 79.5127 29.8659 78.2298 29.8659C76.8166 29.8659 75.671 31.0115 75.671 32.4247C75.671 32.4874 75.685 32.5461 75.6894 32.6077L75.6589 32.6093L75.7148 32.8586C75.7264 32.9265 75.7425 32.9918 75.7594 33.0575L76.0549 34.375C76.6133 36.866 76.8964 39.4311 76.8964 41.9998C76.8964 61.2418 61.2421 76.8966 42.0004 76.8966C22.7583 76.8966 7.10378 61.2418 7.10378 41.9998C7.10378 22.7577 22.7583 7.10344 42.0004 7.10344C50.0877 7.10344 57.9348 9.94464 64.1817 15.1044L60.5002 19.669L74.9541 21.3735L70.5444 7.21568L67.3847 11.1332C60.2332 5.24336 51.2503 2 42.0004 2C19.9441 2 2 19.9438 2 41.9998C2 64.0562 19.9441 82 42.0004 82C64.0562 82 82 64.0562 82 41.9998C82 39.147 81.689 36.2769 81.0758 33.4694L80.7641 32.0421Z" stroke-width="3" stroke-miterlimit="10"/></svg>
-				</button>
+			<button id="reset-button">
+				<svg style="transform: scale(1.3);" width="84" height="84" viewBox="0 0 84 84" fill="#2A84D2" stroke="#2A84D2"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M80.7641 32.0421L80.7503 32.0444C80.5653 30.813 79.5127 29.8659 78.2298 29.8659C76.8166 29.8659 75.671 31.0115 75.671 32.4247C75.671 32.4874 75.685 32.5461 75.6894 32.6077L75.6589 32.6093L75.7148 32.8586C75.7264 32.9265 75.7425 32.9918 75.7594 33.0575L76.0549 34.375C76.6133 36.866 76.8964 39.4311 76.8964 41.9998C76.8964 61.2418 61.2421 76.8966 42.0004 76.8966C22.7583 76.8966 7.10378 61.2418 7.10378 41.9998C7.10378 22.7577 22.7583 7.10344 42.0004 7.10344C50.0877 7.10344 57.9348 9.94464 64.1817 15.1044L60.5002 19.669L74.9541 21.3735L70.5444 7.21568L67.3847 11.1332C60.2332 5.24336 51.2503 2 42.0004 2C19.9441 2 2 19.9438 2 41.9998C2 64.0562 19.9441 82 42.0004 82C64.0562 82 82 64.0562 82 41.9998C82 39.147 81.689 36.2769 81.0758 33.4694L80.7641 32.0421Z"
+						stroke-width="3" stroke-miterlimit="10" />
+				</svg>
+			</button>
 
-				<div id="slide-container">
-					<!-- Valores mínimos muito baixos fazem com que a simulação seja 
+			<div id="slide-container">
+				<!-- Valores mínimos muito baixos fazem com que a simulação seja 
 					rápida demais causando desconforto -->
-					<input id="speed-slider" type="range" min="100" step="1" max="1000">
-				</div>
-			</div>
-
-			<div id="generation-fixed">
-				<button id="generation-drawer-toggle"> << </button>
-			</div>	
-		</div>
-
-		<div id="rules-menu" class="menu">
-			<div id="rules-fixed" draggable="true">
-				<svg width="41" height="21" viewBox="0 0 41 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H41V3H0V0Z" fill="white" fill-opacity="0.6"/><path d="M0 9H41V12H0V9Z" fill="white" fill-opacity="0.6"/><path d="M0 18H41V21H0V18Z" fill="white" fill-opacity="0.6"/></svg>
-
-				<button id="rules-drawer-toggle"><svg width="79" height="79" viewBox="0 0 79 40" fill="#F1F1F1" xmlns="http://www.w3.org/2000/svg">
-					<svg width="65" height="36" viewBox="0 0 65 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M29.7591 1.47489C31.1259 0.108059 33.342 0.10806 34.7089 1.47489C36.0757 2.84173 36.0757 5.05781 34.7089 6.42464L6.42458 34.7089C5.05775 36.0757 2.84167 36.0757 1.47483 34.7089C0.107998 33.3421 0.107998 31.126 1.47483 29.7592L29.7591 1.47489Z" fill="#F1F1F1"/><path d="M62.9931 29.7592C64.36 31.126 64.36 33.3421 62.9931 34.7089C61.6263 36.0757 59.4102 36.0757 58.0434 34.7089L29.7591 6.42464C28.3923 5.05781 28.3923 2.84173 29.7591 1.47489C31.1259 0.108059 33.342 0.10806 34.7089 1.47489L62.9931 29.7592Z" fill="#F1F1F1"/></svg>
-				</button>
-			</div>
-		
-
-			<div id="rules-drawer">
-				<h3>Regras</h3><br>
-				
-				<h4>Células vizinhas para sobreviver</h4>
-
-				<div id="born-rules" class="rules-interface">			
-					<label><input name="alive" type="checkbox">0</label>
-
-					<label><input name="alive" type="checkbox">1</label>
-					
-					<label><input name="alive" type="checkbox" checked>2</label>
-					
-					<label><input name="alive" type="checkbox" checked>3</label>
-					
-					<label><input name="alive" type="checkbox">4</label>
-					
-					<label><input name="alive" type="checkbox">5</label>
-					
-					<label><input name="alive" type="checkbox">6</label>
-
-					<label><input name="alive" type="checkbox">7</label>
-
-					<label><input name="alive" type="checkbox">8</label>
-				</div>
-
-				<br>
-				<h4>Células vizinhas para nascer</h4>
-
-				<div id="alive-rules" class="rules-interface">
-					<label><input name="born" type="checkbox">0</label>
-
-					<label><input name="born" type="checkbox">1</label>
-					
-					<label><input name="born" type="checkbox">2</label>
-					
-					<label><input name="born" type="checkbox" checked>3</label>
-					
-					<label><input name="born" type="checkbox">4</label>
-					
-					<label><input name="born" type="checkbox">5</label>
-					
-					<label><input name="born" type="checkbox">6</label>
-
-					<label><input name="born" type="checkbox">7</label>
-
-					<label><input name="born" type="checkbox">8</label>
-				</div>
-
-			</div> 
-		</div>
-		
-
-
-		<div id="patterns-menu" class="menu focused" style="display: none;">
-			<div id="patterns-area">
+				<input id="speed-slider" type="range" min="100" step="1" max="1000">
 			</div>
 		</div>
 
+		<div id="generation-fixed">
+			<button id="generation-drawer-toggle">
+				<< </button>
+		</div>
+	</div>
 
+	<div id="rules-menu" class="menu">
+		<div id="rules-fixed" draggable="true">
+			<svg width="41" height="21" viewBox="0 0 41 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M0 0H41V3H0V0Z" fill="white" fill-opacity="0.6" />
+				<path d="M0 9H41V12H0V9Z" fill="white" fill-opacity="0.6" />
+				<path d="M0 18H41V21H0V18Z" fill="white" fill-opacity="0.6" />
+			</svg>
 
-		<div id="help-pattern" class="menu">
-			<button><svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 63.0469C42.1574 63.0469 43.9062 61.298 43.9062 59.1406C43.9062 56.9833 42.1574 55.2344 40 55.2344C37.8426 55.2344 36.0938 56.9833 36.0938 59.1406C36.0938 61.298 37.8426 63.0469 40 63.0469Z" /><path d="M40 0C17.8931 0 0 17.8902 0 40C0 62.1069 17.8902 80 40 80C62.1069 80 80 62.1098 80 40C80 17.8931 62.1098 0 40 0ZM40 73.75C21.3473 73.75 6.25 58.6552 6.25 40C6.25 21.3473 21.3448 6.25 40 6.25C58.6527 6.25 73.75 21.3448 73.75 40C73.75 58.6527 58.6552 73.75 40 73.75Z"/><path d="M40 20.0781C33.1075 20.0781 27.5 25.6856 27.5 32.5781C27.5 34.3041 28.8991 35.7031 30.625 35.7031C32.3509 35.7031 33.75 34.3041 33.75 32.5781C33.75 29.1319 36.5537 26.3281 40 26.3281C43.4462 26.3281 46.25 29.1319 46.25 32.5781C46.25 36.0244 43.4462 38.8281 40 38.8281C38.2741 38.8281 36.875 40.2272 36.875 41.9531V49.7656C36.875 51.4916 38.2741 52.8906 40 52.8906C41.7259 52.8906 43.125 51.4916 43.125 49.7656V44.6827C48.5103 43.2916 52.5 38.392 52.5 32.5781C52.5 25.6856 46.8925 20.0781 40 20.0781Z"/></svg></button>
-			<button id="show-patterns-menu"><svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M78.4173 9.76234C78.053 9.6325 69.3652 6.5939 58.8111 6.5939C49.9553 6.5939 42.4113 8.73421 40 9.49781C37.5887 8.73421 30.0447 6.5939 21.1889 6.5939C10.6348 6.5939 1.94703 9.6325 1.58266 9.76234C0.63375 10.0981 0 10.9948 0 12.0023V60.622C0 61.3936 0.377031 62.1175 1.0075 62.5626C2.17156 63.3845 3.16437 62.8433 4.28844 62.5041V70.967C4.28844 71.6751 4.60531 72.3469 5.15031 72.7984C5.69688 73.25 6.41609 73.4337 7.11156 73.3006L32.1881 68.5005C33.2906 70.9236 35.8297 72.8645 38.6089 73.2451C39.4878 73.6953 45.2166 73.5212 47.6866 68.3911C75.5911 73.6003 73.9487 73.3434 74.3602 73.3434C75.6739 73.3434 76.7364 72.2756 76.7364 70.9672V62.8306C78.5295 63.4462 79.9998 62.1467 79.9998 60.6222V12.0023C80 10.9948 79.3663 10.0981 78.4173 9.76234ZM31.385 63.8159L9.04109 68.0933V61.297C17.0219 59.6098 23.9859 59.5883 31.385 60.9153V63.8159ZM4.75266 57.4267C4.75266 54.7102 4.75266 16.2734 4.75266 13.7466C15.5844 10.6017 26.5225 10.5306 37.6236 13.7481C37.6236 16.4136 37.6236 55.9755 37.6236 57.4267C26.8444 54.5614 16.0547 54.4055 4.75266 57.4267ZM43.6833 65.397C43.6425 65.8048 43.4295 66.2736 43.2461 66.6406C41.4053 69.8658 36.7106 68.8605 36.1441 65.3906C36.1322 65.283 36.1413 64.5122 36.1377 61.9576C39.267 62.7723 39.6661 63.2611 40.7984 62.8606C40.8145 62.8606 41.7578 62.5112 43.6833 62.0052V65.397ZM71.9839 68.1044L48.4359 63.697V60.9484C56.2653 59.5187 63.6436 59.6141 71.9838 61.5234V68.1044H71.9839ZM75.2473 57.4267C63.8194 54.3827 52.9889 54.5848 42.3764 57.4267C42.3764 55.9648 42.3764 16.4044 42.3764 13.7466C53.6572 10.4689 64.5589 10.6577 75.2473 13.7481C75.2473 15.297 75.2473 55.6625 75.2473 57.4267Z"/><path d="M67.3928 18.9588C58.315 15.7005 50.6755 18.8308 50.3055 18.9334C49.057 19.3342 48.3695 20.673 48.7703 21.9228C49.1727 23.1728 50.5098 23.8603 51.7597 23.458C60.5858 20.63 65.1531 23.5736 66.5895 23.5736C67.5639 23.5736 68.478 22.9684 68.8264 21.9989C69.2725 20.7598 68.6225 19.3991 67.3928 18.9588Z"/><path d="M67.3931 31.948C58.1656 28.6345 50.7489 31.853 50.3066 31.922C49.057 32.3233 48.3694 33.6616 48.7708 34.9111C49.172 36.1608 50.5102 36.8484 51.7598 36.4469C52.1355 36.3873 58.2694 33.7215 65.787 36.4209C67.017 36.8626 68.3814 36.2275 68.8267 34.9875C69.2698 33.7525 68.6281 32.3915 67.3931 31.948Z"/><path d="M67.3931 44.9367C58.1653 41.6234 50.7556 44.8408 50.3066 44.9108C49.057 45.312 48.3694 46.6503 48.7708 47.8998C49.172 49.1494 50.5102 49.8372 51.7598 49.4356C52.1369 49.3759 58.2598 46.7066 65.787 49.4097C67.0195 49.8519 68.3822 49.2142 68.8267 47.9763C69.2698 46.7413 68.6281 45.3802 67.3931 44.9367Z"/><path d="M29.7706 18.9587C24.6658 17.1253 18.8605 16.949 13.4642 18.6831C13.1302 18.8548 11.6589 18.9434 11.1544 20.4431C10.5491 22.2719 12.273 24.0581 14.1375 23.458C14.5195 23.3973 20.6363 20.7287 28.1642 23.4326C29.4074 23.8789 30.7631 23.2276 31.2028 21.9989C31.6464 20.7631 31.0048 19.4023 29.7706 18.9587Z"/><path d="M29.77 31.948C20.5425 28.6345 13.1258 31.853 12.6834 31.922C11.4339 32.3233 10.7462 33.6616 11.1476 34.9111C11.5489 36.1608 12.8869 36.8484 14.1367 36.4469C14.5128 36.3873 20.6462 33.7215 28.1639 36.4209C29.3939 36.8626 30.7583 36.2275 31.2036 34.9875C31.647 33.7525 31.0053 32.3915 29.77 31.948Z"/><path d="M29.77 44.9367C20.5422 41.6234 13.1325 44.8408 12.6834 44.9108C11.4339 45.312 10.7462 46.6503 11.1476 47.8998C11.5489 49.1494 12.8869 49.8372 14.1367 49.4356C14.5223 49.3745 20.6366 46.7066 28.1639 49.4097C29.3964 49.8519 30.7591 49.2142 31.2036 47.9763C31.647 46.7413 31.0053 45.3802 29.77 44.9367Z"/></svg></button>
+			<button id="rules-drawer-toggle"><svg width="79" height="79" viewBox="0 0 79 40" fill="#F1F1F1"
+					xmlns="http://www.w3.org/2000/svg">
+					<svg width="65" height="36" viewBox="0 0 65 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M29.7591 1.47489C31.1259 0.108059 33.342 0.10806 34.7089 1.47489C36.0757 2.84173 36.0757 5.05781 34.7089 6.42464L6.42458 34.7089C5.05775 36.0757 2.84167 36.0757 1.47483 34.7089C0.107998 33.3421 0.107998 31.126 1.47483 29.7592L29.7591 1.47489Z"
+							fill="#F1F1F1" />
+						<path
+							d="M62.9931 29.7592C64.36 31.126 64.36 33.3421 62.9931 34.7089C61.6263 36.0757 59.4102 36.0757 58.0434 34.7089L29.7591 6.42464C28.3923 5.05781 28.3923 2.84173 29.7591 1.47489C31.1259 0.108059 33.342 0.10806 34.7089 1.47489L62.9931 29.7592Z"
+							fill="#F1F1F1" />
+					</svg>
+			</button>
 		</div>
 
 
-		<script src="htmlTags.js" type="text/javascript"></script>
-		<script src="colors.js" type="text/javascript"></script>
+		<div id="rules-drawer">
+			<h3>Regras</h3><br>
 
-		<script src="cellClass.js" type="text/javascript"></script>
-		<script src="boardClass.js" type="text/javascript"></script>
-		
-		<script src="patterns2DArray.js" type="text/javascript"></script>
-		<script src="patternClass.js" type="text/javascript"></script>
+			<h4>Células vizinhas para sobreviver</h4>
 
-		<script src="dragClass.js" type="text/javascript"></script>
-		
-		<script src="rulesControlClass.js" type="text/javascript"></script>
-		<script src="generationControlClass.js" type="text/javascript"></script>
-		<script src="patternControlClass.js" type="text/javascript"></script>
+			<div id="born-rules" class="rules-interface">
+				<label><input name="alive" type="checkbox">0</label>
 
-		<script src="gameOfLifeClass.js" type="text/javascript"></script>
-		
-		<script>
-			const game = new GameOfLife();
-		</script>
-	</body>
+				<label><input name="alive" type="checkbox">1</label>
+
+				<label><input name="alive" type="checkbox" checked>2</label>
+
+				<label><input name="alive" type="checkbox" checked>3</label>
+
+				<label><input name="alive" type="checkbox">4</label>
+
+				<label><input name="alive" type="checkbox">5</label>
+
+				<label><input name="alive" type="checkbox">6</label>
+
+				<label><input name="alive" type="checkbox">7</label>
+
+				<label><input name="alive" type="checkbox">8</label>
+			</div>
+
+			<br>
+			<h4>Células vizinhas para nascer</h4>
+
+			<div id="alive-rules" class="rules-interface">
+				<label><input name="born" type="checkbox">0</label>
+
+				<label><input name="born" type="checkbox">1</label>
+
+				<label><input name="born" type="checkbox">2</label>
+
+				<label><input name="born" type="checkbox" checked>3</label>
+
+				<label><input name="born" type="checkbox">4</label>
+
+				<label><input name="born" type="checkbox">5</label>
+
+				<label><input name="born" type="checkbox">6</label>
+
+				<label><input name="born" type="checkbox">7</label>
+
+				<label><input name="born" type="checkbox">8</label>
+			</div>
+
+		</div>
+	</div>
 
 
-	
+
+	<div id="patterns-menu" class="menu focused" style="display: none;">
+		<div id="patterns-area">
+		</div>
+	</div>
+
+
+
+	<div id="help-pattern" class="menu">
+		<button><svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M40 63.0469C42.1574 63.0469 43.9062 61.298 43.9062 59.1406C43.9062 56.9833 42.1574 55.2344 40 55.2344C37.8426 55.2344 36.0938 56.9833 36.0938 59.1406C36.0938 61.298 37.8426 63.0469 40 63.0469Z" />
+				<path
+					d="M40 0C17.8931 0 0 17.8902 0 40C0 62.1069 17.8902 80 40 80C62.1069 80 80 62.1098 80 40C80 17.8931 62.1098 0 40 0ZM40 73.75C21.3473 73.75 6.25 58.6552 6.25 40C6.25 21.3473 21.3448 6.25 40 6.25C58.6527 6.25 73.75 21.3448 73.75 40C73.75 58.6527 58.6552 73.75 40 73.75Z" />
+				<path
+					d="M40 20.0781C33.1075 20.0781 27.5 25.6856 27.5 32.5781C27.5 34.3041 28.8991 35.7031 30.625 35.7031C32.3509 35.7031 33.75 34.3041 33.75 32.5781C33.75 29.1319 36.5537 26.3281 40 26.3281C43.4462 26.3281 46.25 29.1319 46.25 32.5781C46.25 36.0244 43.4462 38.8281 40 38.8281C38.2741 38.8281 36.875 40.2272 36.875 41.9531V49.7656C36.875 51.4916 38.2741 52.8906 40 52.8906C41.7259 52.8906 43.125 51.4916 43.125 49.7656V44.6827C48.5103 43.2916 52.5 38.392 52.5 32.5781C52.5 25.6856 46.8925 20.0781 40 20.0781Z" />
+			</svg></button>
+		<button id="show-patterns-menu"><svg width="80" height="80" viewBox="0 0 80 80" fill="none"
+				xmlns="http://www.w3.org/2000/svg">
+				<path
+					d="M78.4173 9.76234C78.053 9.6325 69.3652 6.5939 58.8111 6.5939C49.9553 6.5939 42.4113 8.73421 40 9.49781C37.5887 8.73421 30.0447 6.5939 21.1889 6.5939C10.6348 6.5939 1.94703 9.6325 1.58266 9.76234C0.63375 10.0981 0 10.9948 0 12.0023V60.622C0 61.3936 0.377031 62.1175 1.0075 62.5626C2.17156 63.3845 3.16437 62.8433 4.28844 62.5041V70.967C4.28844 71.6751 4.60531 72.3469 5.15031 72.7984C5.69688 73.25 6.41609 73.4337 7.11156 73.3006L32.1881 68.5005C33.2906 70.9236 35.8297 72.8645 38.6089 73.2451C39.4878 73.6953 45.2166 73.5212 47.6866 68.3911C75.5911 73.6003 73.9487 73.3434 74.3602 73.3434C75.6739 73.3434 76.7364 72.2756 76.7364 70.9672V62.8306C78.5295 63.4462 79.9998 62.1467 79.9998 60.6222V12.0023C80 10.9948 79.3663 10.0981 78.4173 9.76234ZM31.385 63.8159L9.04109 68.0933V61.297C17.0219 59.6098 23.9859 59.5883 31.385 60.9153V63.8159ZM4.75266 57.4267C4.75266 54.7102 4.75266 16.2734 4.75266 13.7466C15.5844 10.6017 26.5225 10.5306 37.6236 13.7481C37.6236 16.4136 37.6236 55.9755 37.6236 57.4267C26.8444 54.5614 16.0547 54.4055 4.75266 57.4267ZM43.6833 65.397C43.6425 65.8048 43.4295 66.2736 43.2461 66.6406C41.4053 69.8658 36.7106 68.8605 36.1441 65.3906C36.1322 65.283 36.1413 64.5122 36.1377 61.9576C39.267 62.7723 39.6661 63.2611 40.7984 62.8606C40.8145 62.8606 41.7578 62.5112 43.6833 62.0052V65.397ZM71.9839 68.1044L48.4359 63.697V60.9484C56.2653 59.5187 63.6436 59.6141 71.9838 61.5234V68.1044H71.9839ZM75.2473 57.4267C63.8194 54.3827 52.9889 54.5848 42.3764 57.4267C42.3764 55.9648 42.3764 16.4044 42.3764 13.7466C53.6572 10.4689 64.5589 10.6577 75.2473 13.7481C75.2473 15.297 75.2473 55.6625 75.2473 57.4267Z" />
+				<path
+					d="M67.3928 18.9588C58.315 15.7005 50.6755 18.8308 50.3055 18.9334C49.057 19.3342 48.3695 20.673 48.7703 21.9228C49.1727 23.1728 50.5098 23.8603 51.7597 23.458C60.5858 20.63 65.1531 23.5736 66.5895 23.5736C67.5639 23.5736 68.478 22.9684 68.8264 21.9989C69.2725 20.7598 68.6225 19.3991 67.3928 18.9588Z" />
+				<path
+					d="M67.3931 31.948C58.1656 28.6345 50.7489 31.853 50.3066 31.922C49.057 32.3233 48.3694 33.6616 48.7708 34.9111C49.172 36.1608 50.5102 36.8484 51.7598 36.4469C52.1355 36.3873 58.2694 33.7215 65.787 36.4209C67.017 36.8626 68.3814 36.2275 68.8267 34.9875C69.2698 33.7525 68.6281 32.3915 67.3931 31.948Z" />
+				<path
+					d="M67.3931 44.9367C58.1653 41.6234 50.7556 44.8408 50.3066 44.9108C49.057 45.312 48.3694 46.6503 48.7708 47.8998C49.172 49.1494 50.5102 49.8372 51.7598 49.4356C52.1369 49.3759 58.2598 46.7066 65.787 49.4097C67.0195 49.8519 68.3822 49.2142 68.8267 47.9763C69.2698 46.7413 68.6281 45.3802 67.3931 44.9367Z" />
+				<path
+					d="M29.7706 18.9587C24.6658 17.1253 18.8605 16.949 13.4642 18.6831C13.1302 18.8548 11.6589 18.9434 11.1544 20.4431C10.5491 22.2719 12.273 24.0581 14.1375 23.458C14.5195 23.3973 20.6363 20.7287 28.1642 23.4326C29.4074 23.8789 30.7631 23.2276 31.2028 21.9989C31.6464 20.7631 31.0048 19.4023 29.7706 18.9587Z" />
+				<path
+					d="M29.77 31.948C20.5425 28.6345 13.1258 31.853 12.6834 31.922C11.4339 32.3233 10.7462 33.6616 11.1476 34.9111C11.5489 36.1608 12.8869 36.8484 14.1367 36.4469C14.5128 36.3873 20.6462 33.7215 28.1639 36.4209C29.3939 36.8626 30.7583 36.2275 31.2036 34.9875C31.647 33.7525 31.0053 32.3915 29.77 31.948Z" />
+				<path
+					d="M29.77 44.9367C20.5422 41.6234 13.1325 44.8408 12.6834 44.9108C11.4339 45.312 10.7462 46.6503 11.1476 47.8998C11.5489 49.1494 12.8869 49.8372 14.1367 49.4356C14.5223 49.3745 20.6366 46.7066 28.1639 49.4097C29.3964 49.8519 30.7591 49.2142 31.2036 47.9763C31.647 46.7413 31.0053 45.3802 29.77 44.9367Z" />
+			</svg></button>
+	</div>
+
+
+	<script src="htmlTags.js" type="text/javascript"></script>
+	<script src="colors.js" type="text/javascript"></script>
+
+	<script src="cellClass.js" type="text/javascript"></script>
+	<script src="boardClass.js" type="text/javascript"></script>
+
+	<script src="patterns2DArray.js" type="text/javascript"></script>
+	<script src="patternClass.js" type="text/javascript"></script>
+
+	<script src="dragClass.js" type="text/javascript"></script>
+
+	<script src="rulesControlClass.js" type="text/javascript"></script>
+	<script src="generationControlClass.js" type="text/javascript"></script>
+	<script src="patternControlClass.js" type="text/javascript"></script>
+
+	<script src="gameOfLifeClass.js" type="text/javascript"></script>
+
+	<script>
+		const game = new GameOfLife();
+	</script>
+</body>
+
+
+
 </html>

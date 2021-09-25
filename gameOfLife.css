@@ -1,433 +1,400 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 
-	font-family: "Roboto", sans-serif;
-	user-select: none;
+  font-family: "Roboto", sans-serif;
+  user-select: none;
 
-	text-align: center;
+  text-align: center;
 
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-body{
-	overflow: hidden;
+body {
+  overflow: hidden;
 }
-
 
 canvas {
-	width: 100vw;
-	height: 100vh;
-	border: none;
-	outline: none;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  outline: none;
 }
 
+button {
+  background-color: inherit;
+  border: none;
 
-button{
-	background-color: inherit;
-	border: none;
+  color: inherit;
 
-	color: inherit;
-
-	cursor: pointer;
+  cursor: pointer;
 }
 
-
-button svg{
-	width: 100%;
-	height: 100%;
+button svg {
+  width: 100%;
+  height: 100%;
 }
 
+div.menu {
+  border-radius: 10px;
+  background-color: rgba(19, 19, 19, 1);
 
-div.menu{
-	border-radius: 10px;
-	background-color: rgba(19,19,19,1);
+  position: fixed;
+  z-index: 100;
 
-	position: fixed;
-	z-index: 100;
-
-	color: #F1F1F1;
+  color: #f1f1f1;
 }
-
 
 /* Estilo do menu de controle de geração*/
 
-div#generation-menu{
-	height: 15vh;
-	bottom: 5vh;
-	left: 5vh;
+div#generation-menu {
+  height: 15vh;
+  bottom: 5vh;
+  left: 5vh;
 }
 
+div#generation-drawer {
+  width: 30vw;
+  height: 15vh;
 
-div#generation-drawer{
-	width: 30vw;
-	height: 15vh;
-
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
 }
 
-
-div#generation-menu div#generation-fixed{
-	background-color: inherit;
+div#generation-menu div#generation-fixed {
+  background-color: inherit;
 }
 
+div#generation-menu div#generation-fixed button#generation-drawer-toggle {
+  height: 50%;
+  border-radius: 0 30% 30% 0;
 
-div#generation-menu div#generation-fixed button#generation-drawer-toggle{
-	height: 50%;
-	border-radius: 0 30% 30% 0;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-0%, -50%);
 
-	position: absolute;
-	top: 50%;
-	left: 100%;
-	transform: translate(-0%,-50%);
-	
-
-	background-color: inherit;
-	color: white;
-	font-size: 3vh;
-	padding: 0 0.6vw 0 0.6vw;
+  background-color: inherit;
+  color: white;
+  font-size: 3vh;
+  padding: 0 0.6vw 0 0.6vw;
 }
 
-
-div#generation-menu div#generation-drawer button{
-	width: 10%;
-	height: 100%;
+div#generation-menu div#generation-drawer button {
+  width: 10%;
+  height: 100%;
 }
 
-
-div#generation-menu * button:hover svg{
-	filter: brightness(0.85);
+div#generation-menu * button:hover svg {
+  filter: brightness(0.85);
 }
 
+div#generation-menu * div#slide-container {
+  position: absolute;
+  border-radius: 0;
 
-div#generation-menu * div#slide-container{
-	position: absolute;
-	border-radius: 0;
+  top: 0;
+  left: 50%;
+  width: 40%;
 
-	top: 0;
-	left: 50%;
-	width: 40%;
+  display: flex;
+  justify-content: center;
 
-
-	display: flex;
-	justify-content: center;
-
-	transform: translate(-50%,-100%);
+  transform: translate(-50%, -100%);
 }
 
+div#generation-menu * input#speed-slider {
+  width: 100%;
+  height: 2vh;
+  background-color: #111;
+  -webkit-appearance: none;
+  outline: none;
 
-div#generation-menu * input#speed-slider{
-	width: 100%;
-	height: 2vh;
-	background-color: #111;
-	-webkit-appearance: none;
-	outline: none;
-
-	/* Necessário pra ocultar o "box-shadow" do slider */
-	overflow: hidden;
+  /* Necessário pra ocultar o "box-shadow" do slider */
+  overflow: hidden;
 }
-
 
 div#generation-menu * input#speed-slider::-webkit-slider-thumb {
-	-webkit-appearance: none; /*Remove a aparência padrão*/
-	width: 0; 
-  	height: 2vh;  
+  -webkit-appearance: none; /*Remove a aparência padrão*/
+  width: 0;
+  height: 2vh;
 
-  	background-color: #2DC55E; 
+  background-color: #2dc55e;
 
-  	cursor: pointer; 
-  	border: 4px solid  #2DC55E;
-  	box-shadow: -100vw 0 0 100vw #2DC55E; /* Truque para preencher o espaço atrás do slider */
+  cursor: pointer;
+  border: 4px solid #2dc55e;
+  box-shadow: -100vw 0 0 100vw #2dc55e; /* Truque para preencher o espaço atrás do slider */
 }
-
 
 /* Estilo do menu de controle das regras*/
-div#rules-menu{
-	top: 8vh;
-	right: 8vh;
+div#rules-menu {
+  top: 8vh;
+  right: 8vh;
 
-	width: 25vw;
-	padding: 5px;
+  width: 25vw;
+  padding: 5px;
 
-	font-size: 3vh;
+  font-size: 3vh;
 }
 
+div#rules-menu div#rules-drawer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-div#rules-menu div#rules-drawer{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	width: 100%;
+  width: 100%;
 }
 
-
-div#rules-menu div#rules-drawer div.rules-interface{
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-
+div#rules-menu div#rules-drawer div.rules-interface {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
+div.rules-interface label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-div.rules-interface label{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  flex-basis: 25%;
 
-	flex-basis: 25%;
-
-	margin-top: 10px;
+  margin-top: 10px;
 }
 
+div.rules-interface label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-div.rules-interface label{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  flex-basis: 25%;
 
-	flex-basis: 25%;
+  margin-top: 4%;
 
-	margin-top: 4%;
-
-	cursor: pointer;
+  cursor: pointer;
 }
 
+div.rules-interface label input {
+  appearance: none;
+  -webkit-appearance: none;
 
-div.rules-interface label input{
-	appearance: none;
-	-webkit-appearance: none;
+  width: 1vw;
+  height: 1vw;
+  background-color: #de2e2e;
 
-	width: 1vw;
-	height: 1vw;
-	background-color: #DE2E2E;
-
-
-	position: relative;
-	cursor: pointer;
-
+  position: relative;
+  cursor: pointer;
 }
 
-
-div.rules-interface label input:checked{
-	background-color: #2DC55E;
+div.rules-interface label input:checked {
+  background-color: #2dc55e;
 }
 
+div#rules-menu #rules-fixed {
+  margin: 5%;
+  height: 2vh;
 
-div#rules-menu #rules-fixed{
-	margin: 5%;
-	height: 2vh;
+  /*overflow: hidden;*/
+  cursor: grab;
 
-	/*overflow: hidden;*/
-	cursor: grab;
-
-	position: relative;
+  position: relative;
 }
 
+div#rules-menu #rules-fixed button {
+  position: absolute;
+  right: 0;
+  top: 50%;
 
-div#rules-menu #rules-fixed button{
-	position: absolute;
-	right: 0;
-	top: 50%;
+  transform: translate(0, -50%);
+  transition: transform 0.3s ease-out 0s;
 
-	transform: translate(0,-50%);
-	transition: transform 0.3s ease-out 0s;
-
-	width: 10%;
+  width: 10%;
 }
 
-
-div#rules-menu #rules-fixed button:hover svg{
-	filter: brightness(0.85);
+div#rules-menu #rules-fixed button:hover svg {
+  filter: brightness(0.85);
 }
 
 /* Patterns-menu */
 
+div#patterns-menu {
+  width: 50vw;
+  height: 90vh;
 
-div#patterns-menu{
-	width: 50vw;
-	height: 90vh;
+  top: 50%;
+  left: 50%;
 
-	top: 50%;
-	left: 50%;
+  transform: translate(-50%, -50%);
 
-	transform: translate(-50%,-50%);
+  overflow-y: auto;
+  overflow-x: hidden;
 
-	overflow-y: auto;
-	overflow-x: hidden;
-
-	display: flex;
+  display: flex;
 }
 
-div#stick-bar{
-	position: sticky;
-	top: 0;
-	left: 0;
+div#stick-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
 
-	width: 50vw;
-	height: 5vh;
+  width: 50vw;
+  height: 5vh;
 
-	background-color: rgba(19,19,19,1);
+  background-color: rgba(19, 19, 19, 1);
 }
 
-div.pattern{
-	width: 100%;
-	height: auto;
+div.pattern {
+  width: 100%;
+  height: auto;
 
-	background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 
-	padding: 2%;
-	margin: 1.5% 0 1.5% 0;
+  padding: 2%;
+  margin: 1.5% 0 1.5% 0;
 
-	display: flex;
-	flex-direction: row;
-
+  display: flex;
+  flex-direction: row;
 }
 
-div.pattern div{
-	display: flex;
-	flex-direction: column;
+div.pattern div {
+  display: flex;
+  flex-direction: column;
 
-	justify-content: center;
-	align-items: center;
+  justify-content: center;
+  align-items: center;
 
-	width: 25vw;
+  width: 25vw;
 }
 
-
-div.pattern .pattern-left img{
-	max-width: 100%;
-	max-height: 100%;
+div.pattern .pattern-left img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
-div.pattern .pattern-right *{
-	margin-bottom: 7%; 
-	margin-top: 7%; 
+div.pattern .pattern-right * {
+  margin-bottom: 7%;
+  margin-top: 7%;
 }
 
-div.pattern .pattern-right button{
-	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.4);
-	padding: 10px;
+div.pattern .pattern-right button {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.4);
+  padding: 10px;
 
-	font-size: 3vh;
+  font-size: 3vh;
 }
 
-div.pattern:nth-child(1n) .pattern-right button{
-	background-color: rgb(222,53,46);
+div.pattern:nth-child(1n) .pattern-right button {
+  background-color: rgb(222, 53, 46);
 }
 
-div.pattern:nth-child(2n) .pattern-right button{
-	background-color: rgb(45,197,94);
+div.pattern:nth-child(2n) .pattern-right button {
+  background-color: rgb(45, 197, 94);
 }
 
-div.pattern:nth-child(3n) .pattern-right button{
-	background-color: rgb(243, 189, 9);
+div.pattern:nth-child(3n) .pattern-right button {
+  background-color: rgb(243, 189, 9);
 }
 
-div.pattern:nth-child(4n) .pattern-right button{
-	background-color: rgb(42, 132, 210);
+div.pattern:nth-child(4n) .pattern-right button {
+  background-color: rgb(42, 132, 210);
 }
 
-div.pattern .pattern-right{	
-	padding: 2%;
+div.pattern .pattern-right {
+  padding: 2%;
 }
 
+div#help-pattern {
+  left: 2%;
+  top: 3%;
 
-div#help-pattern{
-	left: 2%;
-	top: 3%;
+  width: 10vw;
 
-	width: 10vw;
-
-	display: flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
-div#help-pattern button{
-	margin: 10%;
-	width: 50%;
+div#help-pattern button {
+  margin: 10%;
+  width: 50%;
 }
 
-div#help-pattern button svg{
-	fill: #F1F1F1;
+div#help-pattern button svg {
+  fill: #f1f1f1;
 }
 
-.focused{
-	z-index: 300 !important;
+.focused {
+  z-index: 300 !important;
 }
 
-span#cover{
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+span#cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
-	z-index: -100;
+  z-index: -100;
 }
 
-span#cover.active{
-	background-color: rgba(0,0,0,0.7);
-	z-index: 200;
+span#cover.active {
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 200;
 }
 
+div#tutorial {
+  width: 50vw;
+  height: auto;
+  max-height: 80vh;
 
-div#tutorial{
-	width: 50vw;
-	height: auto;
-	max-height: 80vh;
+  overflow: auto;
 
-	overflow: auto;
+  top: 50%;
+  left: 50%;
 
-	top: 50%;
-	left: 50%;
+  transform: translate(-50%, -50%);
 
-	transform: translate(-50%,-50%);
+  z-index: 1000;
 
-	z-index: 1000;
+  padding: 3%;
 
-	padding: 3%;
+  display: flex;
+  flex-direction: column;
 
-	display: flex;
-	flex-direction: column;
-
-	font-size: 17px;
+  font-size: 17px;
 }
 
-div#tutorial *{
-	text-align: left;
-	margin: 3%;
+div#tutorial * {
+  text-align: left;
+  margin: 3%;
 }
 
-div#tutorial ul{
-	width: 70%;
-	align-self: center;
+div#tutorial ul {
+  width: 70%;
+  align-self: center;
 }
 
-div#tutorial p{
-	line-height: 150%;
+div#tutorial p {
+  line-height: 150%;
 }
 
-div#tutorial button{
-	position: static;
-	padding: 1%;
+div#tutorial button {
+  position: static;
+  padding: 1%;
 }
 
-div#tutorial button.skip-tutorial{
-	bottom: 10%;
-	right: 10%;
-	background: rgb(222,53,46);
+div#tutorial button.skip-tutorial {
+  bottom: 10%;
+  right: 10%;
+  background: rgb(222, 53, 46);
 }
 
-div#tutorial button.next-tutorial{
-	background: rgb(42, 132, 210);
+div#tutorial button.next-tutorial {
+  background: rgb(42, 132, 210);
 }
