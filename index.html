@@ -12,38 +12,6 @@
 	<canvas id="myCanvas"></canvas>
 	<span id="cover" class=""></span>
 
-	<!--
-		<div id="tutorial" class="menu">
-			<h2>O que é um autômato celular? </h2>
-
-			<p>Autômato celular é uma especie de simulação, que é realizada em um grade infinita, onde cada espaço dessa grade é uma célula em um estado binário. Ou seja, ela está viva ou morta, infectada ou saudável, colorida ou não.</p>
-			<p>Autômatos celulares possuem regras pré-definidas e a cada "geração" todas as células são submetidas a essas regras, simultaneamente.
-			As regras irão definir quando um célula viva se torna morta, quando uma célula morta se torna viva, e quando a célula permanece estável.</p>
-			<p>Esse processo de decisão é baseado nos vizinhos de uma célula, ou seja, as 8 células que a circundam. A sintaxe utilizada para descrever essas regras é "abc/xyz", onde 'abc' e 'xyz' são um conjunto de números entre 0 e 8.</p>
-			<ul>
-				<li>'abc' define quantos vizinhos vivos uma célula viva precisa para continuar viva na próxima geração.</li>
-				<li>'xyz' define quantos vizinhos vivos uma célula morta precisa para se tornar viva na próxima geração.</li>
-			</ul>
-			<p>
-			   Exemplo: Um autômato celular com uma regra 36/123. <br>
-			   Isso significa que uma célula morta se tornará viva se ela tiver 1, 2 ou 3 vizinhos vivos.<br>
-			   Também significa que uma célula viva sobreviverá se tiver 3 ou 6 vizinhos vivos.<br>
-			   Podemos inferir então que uma célula viva morrerá se tiver 1,2,4,5,7 ou 8 vizinhos vivos.
-			</p>
-
-
-			<h2> Conway's Game of Life </h2>
-			<p>Conway's Game of Life possui regras 23/3, e a lógica por trás dessa escolha é: </p>
-			<ul>
-				<li>Células vivas com menos de 2 vizinhos vivos morrem de solidão</li>
-				<li>Células vivas com mais de 3 vizinhos vivos morrem por superpopulação</li>
-				<li>Células mortas se tornam vivas quando possuem exatamente 3 vizinhos vivos, como por reprodução </li>
-			</ul>
-
-			<button class="skip-tutorial">Pular</button>
-			<button class="next-tutorial">Próximo</button>
-		</div>-->
-
 	<div id="generation-menu" class="menu">
 
 		<div id="generation-drawer">
@@ -97,16 +65,15 @@
 				<path d="M0 18H41V21H0V18Z" fill="white" fill-opacity="0.6" />
 			</svg>
 
-			<button id="rules-drawer-toggle"><svg width="79" height="79" viewBox="0 0 79 40" fill="#F1F1F1"
-					xmlns="http://www.w3.org/2000/svg">
-					<svg width="65" height="36" viewBox="0 0 65 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M29.7591 1.47489C31.1259 0.108059 33.342 0.10806 34.7089 1.47489C36.0757 2.84173 36.0757 5.05781 34.7089 6.42464L6.42458 34.7089C5.05775 36.0757 2.84167 36.0757 1.47483 34.7089C0.107998 33.3421 0.107998 31.126 1.47483 29.7592L29.7591 1.47489Z"
-							fill="#F1F1F1" />
-						<path
-							d="M62.9931 29.7592C64.36 31.126 64.36 33.3421 62.9931 34.7089C61.6263 36.0757 59.4102 36.0757 58.0434 34.7089L29.7591 6.42464C28.3923 5.05781 28.3923 2.84173 29.7591 1.47489C31.1259 0.108059 33.342 0.10806 34.7089 1.47489L62.9931 29.7592Z"
-							fill="#F1F1F1" />
-					</svg>
+			<button id="rules-drawer-toggle">
+				<svg width="79" height="79" viewBox="0 0 79 40" fill="#F1F1F1" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M29.7591 1.47489C31.1259 0.108059 33.342 0.10806 34.7089 1.47489C36.0757 2.84173 36.0757 5.05781 34.7089 6.42464L6.42458 34.7089C5.05775 36.0757 2.84167 36.0757 1.47483 34.7089C0.107998 33.3421 0.107998 31.126 1.47483 29.7592L29.7591 1.47489Z"
+						fill="#F1F1F1" />
+					<path
+						d="M62.9931 29.7592C64.36 31.126 64.36 33.3421 62.9931 34.7089C61.6263 36.0757 59.4102 36.0757 58.0434 34.7089L29.7591 6.42464C28.3923 5.05781 28.3923 2.84173 29.7591 1.47489C31.1259 0.108059 33.342 0.10806 34.7089 1.47489L62.9931 29.7592Z"
+						fill="#F1F1F1" />
+				</svg>
 			</button>
 		</div>
 
