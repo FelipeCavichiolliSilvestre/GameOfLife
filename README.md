@@ -1,3 +1,7 @@
+# Disclaimer
+
+Este projeto já não reflete mais as minhas habilidades, e por isso não pretendo mais utilizá-lo como meu TCC.
+
 # Um TCC sobre autómatos celulares
 
 A inspiração para esse projeto foi a morte (decorrente de COVID-19) do criador do mais famoso autómato celular, John Conway, responsável por criar o Jogo da Vida. <br><br>
